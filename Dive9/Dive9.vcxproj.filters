@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Application">
+      <UniqueIdentifier>{177fd143-3863-46a5-a55e-14cbbe03b74a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Application">
+      <UniqueIdentifier>{f9449016-0cc6-4418-8b44-67d1e312f5e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Events">
+      <UniqueIdentifier>{a9cd7aa0-d448-42d3-9c90-45a01f2f5a82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility">
+      <UniqueIdentifier>{d9631722-7b94-48c1-aac6-eda4786a705d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility">
+      <UniqueIdentifier>{99609d5e-3bc3-48a4-a411-ad26ec24f286}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events">
+      <UniqueIdentifier>{4e0b284f-7395-4247-a728-78e0a55bec9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Events\Notifications">
+      <UniqueIdentifier>{7bcac5d0-6c7f-47cf-bc45-583d4e0269b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events\Notifications">
+      <UniqueIdentifier>{6496aec1-b024-4a91-82b2-154ed44af3b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Events\Windows Messages">
+      <UniqueIdentifier>{83059965-7ca7-4ff1-a3af-4b4945919b88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events\Windows Messages">
+      <UniqueIdentifier>{9a65297d-c6b0-427c-bf75-cbbbcfe0e845}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Events\Windows Messages\Keyboard">
+      <UniqueIdentifier>{de6b666f-4828-4ee8-a412-bada1e5b2820}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events\Windows Messages\Keyboard">
+      <UniqueIdentifier>{8ce6244a-b571-416e-b1af-75ada2c6a4d9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="IWindowProc.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderWindow.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32RenderWindow.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="IEvent.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="IEventListener.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManager.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="EvtInfoMessage.h">
+      <Filter>Header Files\Events\Notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="EvtErrorMessage.h">
+      <Filter>Header Files\Events\Notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="EvtWindowMsg.h">
+      <Filter>Header Files\Events\Windows Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="EvtKeyboardMsg.h">
+      <Filter>Header Files\Events\Windows Messages\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="EvtKeyUp.h">
+      <Filter>Header Files\Events\Windows Messages\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSystem.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderWindow.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32RenderWindow.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="IEventListener.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventManager.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="EvtInfoMessage.cpp">
+      <Filter>Source Files\Events\Notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="EvtErrorMessage.cpp">
+      <Filter>Source Files\Events\Notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="EvtWindowMsg.cpp">
+      <Filter>Source Files\Events\Windows Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="EvtKeyboardMsg.cpp">
+      <Filter>Source Files\Events\Windows Messages\Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="EvtKeyUp.cpp">
+      <Filter>Source Files\Events\Windows Messages\Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Source Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSystem.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
