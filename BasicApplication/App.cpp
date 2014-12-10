@@ -12,6 +12,7 @@ App::~App()
 {
 }
 
+// Configure the render windows and renderer modes
 bool App::ConfigureEngineComponent()
 {
 	int		width = 640;
@@ -42,10 +43,12 @@ void App::ShutdownEngineComponent()
 	}
 }
 
+// Initialize everything else (entity, scenes ...)
 void App::Initialize()
 {
 }
 
+// Update loop
 void App::Update()
 {
 }
@@ -61,41 +64,6 @@ std::wstring App::GetName()
 
 bool App::HandleEvent(EventPtr event)
 {
-	if (event->GetEventType() == SYSTEM_WINDOW_CREATE)
-	{
-		EvtWindowCreatePtr	createMessage = std::static_pointer_cast<EvtWindowCreate>(event);
-		PIXELFORMATDESCRIPTOR	pfd =
-		{
-			sizeof(PIXELFORMATDESCRIPTOR),
-			1,
-			PFD_DRAW_TO_WINDOW | PFD_SUPPORT_OPENGL | PFD_DOUBLEBUFFER,
-			PFD_TYPE_RGBA,
-			32,
-			0, 0, 0, 0, 0, 0,
-			0,
-			0,
-			0,
-			0, 0, 0, 0,
-			24,
-			8,
-			0,
-			PFD_MAIN_PLANE,
-			0,
-			0, 0, 0
-		};
-
-		HDC	ourWindowHandleToDeviceContext = GetDC(createMessage->GetWindowHandle());
-
-		int	letWindowsChooseThisPixelFormat;
-		letWindowsChooseThisPixelFormat = ChoosePixelFormat(ourWindowHandleToDeviceContext, &pfd);
-		SetPixelFormat(ourWindowHandleToDeviceContext, letWindowsChooseThisPixelFormat, &pfd);
-
-		HGLRC	ourOpenGLRenderingContext = wglCreateContext(ourWindowHandleToDeviceContext);
-		wglMakeCurrent(ourWindowHandleToDeviceContext, ourOpenGLRenderingContext);
-
-		MessageBoxA(nullptr, (char*)glGetString(GL_VERSION), "OPENGL VERSION", 0);
-	}
-
 	return Application::HandleEvent(event);
 }
 

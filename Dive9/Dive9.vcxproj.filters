@@ -49,6 +49,18 @@
     <Filter Include="Source Files\Events\Windows Messages\Keyboard">
       <UniqueIdentifier>{8ce6244a-b571-416e-b1af-75ada2c6a4d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Scene">
+      <UniqueIdentifier>{8f2a27a7-5fd2-4e8f-8cb6-9c5ff6c9087c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene">
+      <UniqueIdentifier>{46b7ad9d-b12c-44b3-8246-755d5fcac8b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scene\Basic Objects">
+      <UniqueIdentifier>{3e455439-611e-46cf-9ed4-8d03abded027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene\Basic Objects">
+      <UniqueIdentifier>{02251679-ea03-41fd-bd92-c5db987fedbe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -108,6 +120,12 @@
     <ClInclude Include="EvtWindowCreate.h">
       <Filter>Header Files\Events\Windows Messages</Filter>
     </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Node3D.h">
+      <Filter>Header Files\Scene\Basic Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -157,6 +175,12 @@
     </ClCompile>
     <ClCompile Include="EvtWindowCreate.cpp">
       <Filter>Source Files\Events\Windows Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Node3D.cpp">
+      <Filter>Source Files\Scene\Basic Objects</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -96,7 +96,9 @@
     <ClInclude Include="IEventListener.h" />
     <ClInclude Include="IWindowProc.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="Node3D.h" />
     <ClInclude Include="RenderWindow.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Win32RenderWindow.h" />
@@ -115,7 +117,9 @@
     <ClCompile Include="IEventListener.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Node3D.cpp" />
     <ClCompile Include="RenderWindow.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
