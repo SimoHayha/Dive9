@@ -17,6 +17,7 @@ namespace Dive9
 
 		static Application*	GetApplication();
 
+		virtual void	ConfigureCommandLine(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lPcmdline, int ncmdshow);
 		virtual bool	ConfigureEngineComponent() = 0;
 		virtual void	ShutdownEngineComponent() = 0;
 		virtual void	Initialize() = 0;

@@ -15,6 +15,8 @@ int WINAPI WinMain(HINSTANCE h_Inst, HINSTANCE h_PrevInst, LPSTR lpcmdline, int 
 	if (!app)
 		return -1;
 
+	app->ConfigureCommandLine(h_Inst, h_PrevInst, lpcmdline, ncmdshow);
+
 	if (!app->ConfigureEngineComponent())
 	{
 		app->ShutdownEngineComponent();

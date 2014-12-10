@@ -102,6 +102,12 @@
     <ClInclude Include="FileSystem.h">
       <Filter>Header Files\Application</Filter>
     </ClInclude>
+    <ClInclude Include="GLRenderWindow.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="EvtWindowCreate.h">
+      <Filter>Header Files\Events\Windows Messages</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -145,6 +151,12 @@
     </ClCompile>
     <ClCompile Include="FileSystem.cpp">
       <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="GLRenderWindow.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="EvtWindowCreate.cpp">
+      <Filter>Source Files\Events\Windows Messages</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,53 +1,41 @@
 #include "stdafx.h"
 #include "IWindowProc.h"
-#include "Win32RenderWindow.h"
+#include "GLRenderWindow.h"
 
 using namespace Dive9;
 
-extern LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+extern LRESULT CALLBACK InternalWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-Win32RenderWindow::Win32RenderWindow()
+GLRenderWindow::GLRenderWindow(HINSTANCE hInstance)
 {
 	m_hWnd = nullptr;
 
 	m_style = (WS_OVERLAPPEDWINDOW | WS_VISIBLE);
 }
 
-Win32RenderWindow::~Win32RenderWindow()
+GLRenderWindow::~GLRenderWindow()
 {
 	Shutdown();
 }
 
-LRESULT CALLBACK InternalWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+void GLRenderWindow::Initialize(IWindowProc* windowProcObj)
 {
-	LONG_PTR	objPtr = GetWindowLongPtr(hWnd, 0);
-
-	if (!objPtr)
-		return DefWindowProc(hWnd, uMsg, wParam, lParam);
-	else
-		return ((IWindowProc*)objPtr)->WindowProc(hWnd, uMsg, wParam, lParam);
-}
-
-void Win32RenderWindow::Initialize(IWindowProc* windowProcObj)
-{
-	WNDCLASSEX	wc;
+	WNDCLASS	wc;
 
 	memset(&wc, 0, sizeof(wc));
-	wc.cbSize = sizeof(WNDCLASSEX);
-	wc.style = CS_HREDRAW | CS_VREDRAW;
+	wc.style = CS_OWNDC;
 	wc.lpfnWndProc = InternalWindowProc;
 	wc.cbClsExtra = 0;
 	wc.cbWndExtra = sizeof(windowProcObj);
-	wc.hInstance = 0;
+	wc.hInstance = m_hInstance;
 	wc.hIcon = LoadIcon(nullptr, IDI_APPLICATION);
 	wc.hCursor = LoadCursor(nullptr, IDC_ARROW);
 	wc.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	wc.lpszMenuName = nullptr;
-	wc.lpszClassName = L"D3D Engine";
-	wc.hIconSm = LoadIcon(nullptr, IDI_APPLICATION);
-	windowProcObj->BeforeRegisterWindowClass(wc);
+	wc.lpszClassName = L"GL Engine";
+	//windowProcObj->BeforeRegisterWindowClass(wc);
 
-	RegisterClassEx(&wc);
+	RegisterClass(&wc);
 
 	RECT	rc;
 	rc.top = 0;
@@ -55,7 +43,7 @@ void Win32RenderWindow::Initialize(IWindowProc* windowProcObj)
 	rc.right = m_width;
 	rc.bottom = m_height;
 
-	AdjustWindowRectEx(&rc, m_style, false, 0);
+	AdjustWindowRect(&rc, m_style, false);
 
 	long	width = rc.right - rc.left;
 	long	height = rc.bottom - rc.top;
@@ -63,10 +51,9 @@ void Win32RenderWindow::Initialize(IWindowProc* windowProcObj)
 	long	left = (long)m_left;
 	long	top = (long)m_top;
 
-	m_hWnd = CreateWindowEx(
-		0,
+	m_hWnd = CreateWindowW(
 		wc.lpszClassName,
-		L"DirectX 11",
+		L"OpenGL",
 		m_style,
 		left,
 		top,
@@ -74,7 +61,7 @@ void Win32RenderWindow::Initialize(IWindowProc* windowProcObj)
 		height,
 		nullptr,
 		nullptr,
-		nullptr,
+		m_hInstance,
 		nullptr
 		);
 
@@ -91,13 +78,10 @@ void Win32RenderWindow::Initialize(IWindowProc* windowProcObj)
 	}
 }
 
-void Win32RenderWindow::Shutdown()
+void GLRenderWindow::Shutdown()
 {
-	if (m_hWnd)
-		DestroyWindow(m_hWnd);
-	m_hWnd = nullptr;
 }
 
-void Win32RenderWindow::Paint()
+void GLRenderWindow::Paint()
 {
 }

@@ -4,6 +4,8 @@
 
 #include "EvtKeyUp.h"
 
+#include "EvtWindowCreate.h"
+
 #include "Log.h"
 
 #include "Application.h"
@@ -100,6 +102,11 @@ LRESULT Application::WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 {
 	switch (uMsg)
 	{
+	case WM_CREATE:
+	{
+		EvtWindowCreatePtr	event = EvtWindowCreatePtr(new EvtWindowCreate(hWnd, wParam, lParam));
+		EvtManager.ProcessEvent(event);
+	} break;
 	case WM_DESTROY:
 	{
 		PostQuitMessage(0);
@@ -112,4 +119,12 @@ LRESULT Application::WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 	} break;
 	}
 	return DefWindowProc(hWnd, uMsg, wParam, lParam);
+}
+
+void Application::ConfigureCommandLine(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lPcmdline, int ncmdshow)
+{
+	UNREFERENCED_PARAMETER(hInst);
+	UNREFERENCED_PARAMETER(hPrevInst);
+	UNREFERENCED_PARAMETER(lPcmdline);
+	UNREFERENCED_PARAMETER(ncmdshow);
 }
