@@ -15,5 +15,6 @@
 #include <memory>
 #include <vector>
 #include <fstream>
+#include <sstream>
 
 // TODO: reference additional headers your program requires here

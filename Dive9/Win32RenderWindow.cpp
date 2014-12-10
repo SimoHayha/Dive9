@@ -85,7 +85,7 @@ void Win32RenderWindow::Initialize(IWindowProc* windowProcObj)
 
 	if (m_hWnd)
 	{
-		SetWindowLongPtr(m_hWnd, 0, (LONG_PTR)windowProcObj);
+		LONG_PTR ret = SetWindowLongPtr(m_hWnd, 0, (LONG_PTR)windowProcObj);
 		ShowWindow(m_hWnd, SW_SHOWNORMAL);
 		UpdateWindow(m_hWnd);
 	}
