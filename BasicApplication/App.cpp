@@ -1,3 +1,4 @@
+#include "AppCuda.h"
 #include "EvtWindowCreate.h"
 #include "App.h"
 
@@ -22,8 +23,11 @@ bool App::ConfigureEngineComponent()
 	m_window = new Win32RenderWindow();
 	m_window->Initialize(this);
 
-	m_glfwWindow = new GLRenderWindow(m_hInst);
-	m_glfwWindow->Initialize(this);
+	//m_glfwWindow = new GLRenderWindow(m_hInst);
+	//m_glfwWindow->Initialize(this);
+
+	AppCuda*	cuda = new AppCuda();
+	cuda->Init();
 
 	return true;
 }
